@@ -1,0 +1,35 @@
+<section class="hero is-light is-medium">
+	<div class="hero-body">
+		<div class="container">
+			<div class="title is-12 has-text-centered">Test</div>
+			<div class="columns is-multiline">
+				{{#each this}}
+					<div class="column is-one-quarter">
+						<div class="card">
+							<div class="card-image">
+								<figure class="image is-4by3">
+									<img src="http://lorempixel.com/400/200/" alt="image">
+								</figure>
+							</div>
+							<div class="card-content">
+								<div class="media">
+									<div class="media-left">
+										<img src="http://lorempixel.com/400/200/" alt="image">
+									</div>
+									<div class="media-content">
+										<p class="title is-4">{{this.chapter}}</p>
+									</div>
+								</div>
+							</div>
+							<div class="content">
+								{{this.link}}
+								<br>
+								{{this.note}}
+							</div>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</section>

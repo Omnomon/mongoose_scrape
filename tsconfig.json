@@ -1,0 +1,12 @@
+{
+    "cmd": ["tsc","$file"],
+    "file_regex": "(.*\\.ts?)\\s\\(([0-9]+)\\,([0-9]+)\\)\\:\\s(...*?)$",
+    "selector": "source.ts",
+
+    "windows": {
+        "cmd": ["tsc.cmd", "$file"]
+    },
+    "compilerOptions": {
+    	"target": "es6"
+    }
+}
