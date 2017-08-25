@@ -6,7 +6,8 @@ module.exports = function(app){
 	app.get("/", (req, res)=>{
 		Card.find({}, (err, doc)=>{
 			if (err) throw err
-			let hbs = [doc]
+			let hbs = doc
+			console.log(hbs)
 			res.render("home", hbs)
 		})
 	})
@@ -14,10 +15,12 @@ module.exports = function(app){
 	app.get("/scrape", (req, res)=>{
 		request("https://www.sciencenews.org/",(error, response, html)=>{
 			const $ = cheerio.load(html);
-			$("div.field-item article header h2 a").each((i, element)=>{
+			$("div.field-item article").each((i, element)=>{
                 let result = {
-                    title: $(element).text(),
-                    link: $(element).attr("href")
+                    title: $(element).children("header").find("a").text(),
+                    link: $(element).children("header").find("a").attr("href"),
+                    img: $(element).children("div.main-image").find("img").attr("src"),
+                    desc: $(element).children("div.content").text()
                 };
 
 				var entry = new Card(result)

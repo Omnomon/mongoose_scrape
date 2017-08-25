@@ -7,6 +7,12 @@ var CardSchema = Schema({
 	link: {
 		type: String 
 	},
+	img: {
+		type: String
+	},
+	desc: {
+		type: String
+	},
 	note: {
 		type: Schema.Types.ObjectId,
 		ref: "Note"

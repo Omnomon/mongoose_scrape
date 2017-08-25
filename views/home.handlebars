@@ -8,24 +8,25 @@
 						<div class="card">
 							<div class="card-image">
 								<figure class="image is-4by3">
-									<img src="http://lorempixel.com/400/200/" alt="image">
+									<img src={{this.img}}>
 								</figure>
 							</div>
 							<div class="card-content">
 								<div class="media">
-									<div class="media-left">
-										<img src="http://lorempixel.com/400/200/" alt="image">
-									</div>
 									<div class="media-content">
-										<p class="title is-4">{{this.chapter}}</p>
+										<p class="title is-4">{{this.title}}</p>
 									</div>
 								</div>
 							</div>
 							<div class="content">
+								{{this.desc}}
 								{{this.link}}
-								<br>
-								{{this.note}}
 							</div>
+						  <footer class="card-footer">
+						    <a class="card-footer-item open-modal">Comment</a>
+								{{>comment-modal}}
+						    <a class="card-footer-item">Delete</a>
+						  </footer>
 						</div>
 					</div>
 				{{/each}}
@@ -33,3 +34,4 @@
 		</div>
 	</div>
 </section>
+
