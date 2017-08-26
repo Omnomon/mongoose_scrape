@@ -6,7 +6,18 @@ var logger = require("morgan");
 var request = require("request");
 var cheerio = require("cheerio");
 var exphbs = require("express-handlebars")
-
+handlebars=require('handlebars')
+handlebars.registerHelper("debug", function(optionalValue) {
+  console.log("Current Context");
+  console.log("====================");
+  console.log(this);
+ 
+  if (optionalValue) {
+    console.log("Value");
+    console.log("====================");
+    console.log(optionalValue);
+  }
+});
 // use mongoose 
 
 var mongoose = require("mongoose");

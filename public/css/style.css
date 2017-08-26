@@ -3,5 +3,23 @@
 }
 
 .modal-background {
-    background-color: rgba(100, 100, 100, 0.01);
+    background-color: rgba(10, 10, 10, 0.50);
+}
+
+.content {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 0px;
+}
+
+.content:not(:last-child) {
+	margin-bottom: 0px;
+}
+
+.is-ancestor {
+	flex-wrap: wrap;
+}
+
+.is-parent{
+	margin: 10px;
 }

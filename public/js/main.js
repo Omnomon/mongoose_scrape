@@ -11,4 +11,12 @@ $(document).ready(() => {
     $(".close-modal").on("click", function (event) {
         $(".modal").removeClass("is-active");
     });
+    $(".delete-comment").on("click", function (event) {
+        $.ajax({
+            type: "DELETE",
+            url: `/delete/${this.id}`
+        }).then(function (result) {
+            console.log("delete success");
+        });
+    });
 });

@@ -6,6 +6,10 @@ var NoteSchema = new Schema({
     },
     text: {
         type: String
+    },
+    article: {
+        type: Schema.Types.ObjectId,
+        ref: "Card"
     }
 });
 var Note = mongoose.model("Note", NoteSchema);

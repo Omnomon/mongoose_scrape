@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema
+var autopopulate = require("mongoose-autopopulate")
 var CardSchema = Schema({
 	title: {
 		type: String
@@ -11,14 +12,16 @@ var CardSchema = Schema({
 		type: String
 	},
 	desc: {
-		type: String
+		type: String,
+		required: true
 	},
-	note: {
+	note: [{
 		type: Schema.Types.ObjectId,
-		ref: "Note"
-	}
+		ref: "Note",
+		autopopulate: true
+	}]
 })
-
+CardSchema.plugin(autopopulate)
 var Card = mongoose.model('Card', CardSchema)
 
 module.exports = Card;
