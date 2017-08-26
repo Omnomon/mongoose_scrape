@@ -22,7 +22,7 @@ handlebars.registerHelper("debug", function(optionalValue) {
 
 var mongoose = require("mongoose");
 mongoose.Promise = Promise;
-mongoose.connect('localhost:27017/mongoose_scrape')
+mongoose.connect("mongodb://heroku_g0v150ph:ee24vfcqj8k6dmtg5ej4728rq8@ds161443.mlab.com:61443/heroku_g0v150ph" || 'localhost:27017/mongoose_scrape')
 var db = mongoose.connection
 // Show any mongoose errors
 db.on("error", function(error) {
