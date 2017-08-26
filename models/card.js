@@ -12,8 +12,7 @@ var CardSchema = Schema({
         type: String
     },
     desc: {
-        type: String,
-        required: true
+        type: String
     },
     note: [{
             type: Schema.Types.ObjectId,

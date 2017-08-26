@@ -52,7 +52,7 @@ module.exports = function (app) {
     });
     app.post("/comment/:id", (req, res) => {
         if (!req.body.author || !req.body.comment) {
-            return;
+            res.redirect("/");
         }
         var newNote = new Note({
             author: req.body.author,

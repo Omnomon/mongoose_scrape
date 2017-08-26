@@ -55,8 +55,7 @@ module.exports = function(app){
 
 	app.post("/comment/:id", (req,res)=>{
 		if (!req.body.author || !req.body.comment){
-			alert("You have not entered a comment or an author")
-			break
+			res.redirect("/")
 		}
 		var newNote = new Note({
 			author: req.body.author,
