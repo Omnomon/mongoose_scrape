@@ -6,9 +6,11 @@ $(document).ready(() => {
         $(`.modal.${selector}`).addClass("is-active");
     });
     $(".modal-background").click(event => {
+        event.preventDefault();
         $(".modal").removeClass("is-active");
     });
     $(".close-modal").on("click", function (event) {
+        event.preventDefault();
         $(".modal").removeClass("is-active");
     });
     $(".delete-comment").on("click", function (event) {
